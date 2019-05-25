@@ -4,5 +4,8 @@
   "main": "index.js",
   "repository": "https://github.com/PedroAlmy/FourRobots.git",
   "author": "Pedro Almeida <pedrogunsx@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "readline-sync": "^1.4.9"
+  }
 }
