@@ -1,0 +1,8 @@
+{
+  "name": "package.json",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/PedroAlmy/FourRobots.git",
+  "author": "Pedro Almeida <pedrogunsx@gmail.com>",
+  "license": "MIT"
+}
