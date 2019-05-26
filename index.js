@@ -1,24 +1,29 @@
 const readline = require('readline-sync');
-function start(){
+const robots = {
+    text: require('./robots/text.js')  
+}
+async function start() {    
+    const conteudo = {}
 
-    const content = {}
+    conteudo.procurarTermo = ResponderERetornarTermoDoWikipedia ();
+    conteudo.prefixo = ResponderERetornarOPrefixo();
 
-    content.procurarTermo = pergunteERetorneOTermoDeBusca();
-    content.procurarPrefixo = pergunteERetorneOPrefixo();
+    await robots.text(conteudo);
+
+    function ResponderERetornarTermoDoWikipedia() {
+        return readline.question ('Digite um termo do Wikipedia: ');
+
+    }
+    function ResponderERetornarOPrefixo () {
+        const prefixo = ['Quem e? ', 'O que e? ', 'A historia de: '];
+        const SelecionarIndiceDoPrefixo = readline.keyInSelect(prefixo, 'Escolha uma opcao: ');
+        const SelecionarTextoDoPrefixo = prefixo[SelecionarIndiceDoPrefixo];
+
+        return SelecionarTextoDoPrefixo;
+    }
     
-    function pergunteERetorneOTermoDeBusca(){
-        return readline.question('Digite o termo de busca do Wikipedia: ');
-    }
+    console.log(conteudo);
 
-    function pergunteERetorneOPrefixo(){
-       const prefixos = ['Quem e: ', 'O que e: ', 'A historia de: '];
-       const selecionarOIndexDoPrefixo = readline.keyInSelect(prefixos, 'escolha uma opcao: ');
-       const selecionarOTextoDoPrefixo = prefixos[selecionarOIndexDoPrefixo];
-       return selecionarOTextoDoPrefixo;
-
-    }
-
-    console.log(content);
 }
 
 start ()
