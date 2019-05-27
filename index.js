@@ -3,7 +3,9 @@ const robots = {
     text: require('./robots/text.js')  
 }
 async function start() {    
-    const conteudo = {}
+    const conteudo = {
+        sentecasMaxima: 7
+    }
 
     conteudo.procurarTermo = ResponderERetornarTermoDoWikipedia ();
     conteudo.prefixo = ResponderERetornarOPrefixo();
@@ -22,7 +24,7 @@ async function start() {
         return SelecionarTextoDoPrefixo;
     }
     
-    console.log(conteudo);
+    console.log(JSON.stringify(conteudo, null, 4));
 
 }
 
